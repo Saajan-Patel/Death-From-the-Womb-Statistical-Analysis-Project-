@@ -1,0 +1,35 @@
+---
+title: "Project proposal"
+author: "Avatar: Xavier Ghazaleh, Abigail Phillips, Saajan Patel, Harriet Wiser"
+date: "10/09/2020"
+output: pdf_document
+---
+
+### Section 1. Introduction
+
+Death is a certainty, but what we die of depends on the conditions (environmental, economic, political, etc.) under which we live. A significant factor that determines these conditions is our position in the world, both geographically and socially - so from where we live to who has power over us. This means that causes of death and their prevalence can vary based on our country and our region. This data set puts numbers to those disparities. Understanding how someone’s situation affects their risks is broadly important because it determines what interventions are put in place, governmentally or otherwise. 
+ 
+We have many avenues we would like to explore with this dataset. The immediate thing that comes to mind is tracking how the impact of certain afflictions changes over time in different locations - as well as how the impact of certain afflictions varies based upon location in the first place. We are also interested in how different issues relate to others. An obvious example of this is alcohol disorders and liver disease, but we also want to trace more subtle potential links like perhaps HIV/AIDS and suicide. Although we, of course, probably won’t be able to establish causation without broader understanding of the context these factors exist in, correlation can still lead to some interesting conclusions. The conflict and terrorism columns also merit examine, although unfortunately there are many places that don’t have data for those areas, so it would have to be a more place-limited analysis. 
+
+Research Question: 
+How are homicide and suicide mortality rates related to the mortality rates of other diseases and issues such as dementia, aid, and liver disease?
+  
+Hypothesis: 
+Homicide and suicide will be have a positive correlation with at least one other disease or issue such as dementia, aids, and liver disease.
+
+### Section 2. Data description
+
+The numbers are drawn from a study called the Global Burden of Disease done by the medical journal The Lancet. It is a world-wide observational study that collects data starting in 1990 and updated up to 2017, although we are using a version that ends in 2016. The data include mortality rates by the percent of deaths caused by 32 issues every year in 228 regions/countries. The causes of death (observations) seem to be roughly organized by prevalence, although this, of course, varies. The first three are cardiovascular disease, cancer, and respiratory disease. The countries and regions (variables) are ordered alphabetically, with each location having all 27 years they were tracked represented right after each other (i.e. it is ordered by location not by timeline). The first country is Afghanistan, and the fifth location gives us our first region, Andean Latin America. 
+
+### Section 3. Glimpse of data 
+
+```{r dataset, message=FALSE}
+library(tidyverse) 
+library(readxl)
+global_mortality <- read_excel("data/global_mortality.xlsx")
+
+glimpse(global_mortality)
+```
+
+
+
